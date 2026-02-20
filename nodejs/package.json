@@ -1,0 +1,18 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "world best node and express series",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "app.js",
+  "bin": {
+    "joke": "./joke.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "chalk": "^5.6.2"
+  }
+}

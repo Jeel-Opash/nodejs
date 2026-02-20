@@ -1,0 +1,12 @@
+const mongoose =require("mongoose")
+
+function connectToDB(){
+    mongoose.connect(process.env.MONGO_URL).then(()=>{
+        console.log("server is conect to DB")
+    })
+    .catch(err=>{
+        console.log("ERROR connecting to DB")
+        process.exit(1)
+    })
+}
+module.exports = connectToDB
