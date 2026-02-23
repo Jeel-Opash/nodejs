@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 const createFoodController = async (req, res) => {
   try {
-    const { title, description, price, foodTags, category, isAvailable, restaurant, rating } = req.body;
+    const {title,description,price,foodTags,category,isAvailable,restaurant,rating } = req.body;
 
     if (!title || !description || !price || !restaurant) {
       return res.status(400).send({
@@ -20,7 +20,7 @@ const createFoodController = async (req, res) => {
     }
 
     const newFood = new foodModel({
-      title, description, price, foodTags, category, isAvailable, restaurant, rating
+     title,description,price,foodTags,category,isAvailable,restaurant,rating 
     });
 
     await newFood.save();
@@ -38,7 +38,6 @@ const createFoodController = async (req, res) => {
     });
   }
 };
-
 
 
 const getAllFoodsController = async (req, res) => {
@@ -66,10 +65,6 @@ const getAllFoodsController = async (req, res) => {
 };
 
 
-
-
-
-
 const getFoodByResturantController = async (req, res) => {
   try {
     const resturantId = req.params.id;
@@ -79,7 +74,6 @@ const getFoodByResturantController = async (req, res) => {
         message: "please provide id",
       });
     }
-    // validate restaurant ID
     if (!mongoose.Types.ObjectId.isValid(resturantId)) {
       return res.status(400).send({
         success: false,
@@ -109,8 +103,6 @@ const getFoodByResturantController = async (req, res) => {
 };
 
 
-
-
 const updateFoodController = async (req, res) => {
   try {
     const foodID = req.params.id;
@@ -120,7 +112,6 @@ const updateFoodController = async (req, res) => {
         message: "no food id was found",
       });
     }
-    // validate food ID
     if (!mongoose.Types.ObjectId.isValid(foodID)) {
       return res.status(400).send({
         success: false,
@@ -134,7 +125,7 @@ const updateFoodController = async (req, res) => {
         message: "No Food Found",
       });
     }
-    const { title, description, price, foodTags, category, isAvailable, restaurant, rating } = req.body;
+    const {title,description,price,foodTags,category,isAvailable,restaurant,rating}= req.body;
     if (restaurant && !mongoose.Types.ObjectId.isValid(restaurant)) {
       return res.status(400).send({
         success: false,
@@ -163,8 +154,6 @@ const updateFoodController = async (req, res) => {
 };
 
 
-
-
 const deleteFoodController = async (req, res) => {
   try {
     const foodId = req.params.id;
@@ -174,7 +163,6 @@ const deleteFoodController = async (req, res) => {
         message: "provide food id",
       });
     }
-    // validate food ID
     if (!mongoose.Types.ObjectId.isValid(foodId)) {
       return res.status(400).send({
         success: false,

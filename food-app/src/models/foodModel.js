@@ -9,8 +9,7 @@ const foodSchema = new mongoose.Schema(
         description: {
             type: String,
             required: [true, 'food description is required']
-
-        },
+},
         price: {
             type: Number,
             required: [true, 'food price is required']
@@ -22,7 +21,6 @@ const foodSchema = new mongoose.Schema(
             type: String
 
         },
-
         isAvailable: {
             type: Boolean,
             default: true,

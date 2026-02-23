@@ -7,9 +7,8 @@ const resturantSchema = new mongoose.Schema(
             required: [true, "Resturunt title is require"]
         },
         imageurl: {
-            type: String,
+            type:String,
         },
-       
         time: {
             type: String,
         },
